@@ -13,10 +13,10 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: video
+  name: import
 spec:
   selector:
-    app: video
+    app: import
   ports:
     - port: 4001
   type: ClusterIP
@@ -25,24 +25,12 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: ai
+  name: issue
 spec:
   selector:
-    app: ai
+    app: issue
   ports:
     - port: 4002
-  type: ClusterIP
-
----
-kind: Service
-apiVersion: v1
-metadata:
-  name: products
-spec:
-  selector:
-    app: products
-  ports:
-    - port: 4003
   type: ClusterIP
 
 ---

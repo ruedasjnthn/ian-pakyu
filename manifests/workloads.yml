@@ -14,70 +14,50 @@ spec:
     spec:
       containers:
         - name: auth
-          image: dregistry.xaasfarm.com/xaasfarm/xaasfarm/graphql-auth:Development
+          image: dregistry.xaasfarm.com/xaasfarm/xaasfarm/cc_backend-auth:Development
           imagePullPolicy: Always
 
 ---
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: video
+  name: import
 spec:
   selector:
     matchLabels:
-      app: video
+      app: import
   replicas: 1
   template:
     metadata:
       labels:
-        app: video
+        app: import
     spec:
       containers:
-        - name: video
-          image: dregistry.xaasfarm.com/xaasfarm/xaasfarm/graphql-video:Development
+        - name: import
+          image: dregistry.xaasfarm.com/xaasfarm/xaasfarm/cc_backend-import:Development
           imagePullPolicy: Always
 
 ---
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: products
+  name: issue
 spec:
   selector:
     matchLabels:
-      app: products
+      app: issue
   replicas: 1
   template:
     metadata:
       labels:
-        app: products
+        app: issue
     spec:
       containers:
         - env:
             - name: DATABASE_URL
-              value: mongodb://sound:w5rwdt8xd6uindqrw8@88.99.192.6:27017/aiDB?connectTimeoutMS=10000&authSource=admin&authMechanism=SCRAM-SHA-1
-          name: products
-          image: dregistry.xaasfarm.com/xaasfarm/xaasfarm/graphql-products:Development
-          imagePullPolicy: Always
-
----
-kind: Deployment
-apiVersion: apps/v1
-metadata:
-  name: ai
-spec:
-  selector:
-    matchLabels:
-      app: ai
-  replicas: 1
-  template:
-    metadata:
-      labels:
-        app: ai
-    spec:
-      containers:
-        - name: ai
-          image: dregistry.xaasfarm.com/xaasfarm/xaasfarm/graphql-ai:Development
+              value: mongodb+srv://dbUser1:2ym5a8aBl95VmchG@cluster0.edcw5.mongodb.net/admin?replicaSet=atlas-paxjaq-shard-0&readPreference=primary&connectTimeoutMS=10000&authSource=admin&authMechanism=SCRAM-SHA-1
+          name: issue
+          image: dregistry.xaasfarm.com/xaasfarm/xaasfarm/cc_backend-issue:Development
           imagePullPolicy: Always
 
 ---
@@ -97,7 +77,7 @@ spec:
     spec:
       containers:
         - name: gateway
-          image: dregistry.xaasfarm.com/xaasfarm/xaasfarm/graphql:Development
+          image: dregistry.xaasfarm.com/xaasfarm/xaasfarm/cc_backend:Development
           imagePullPolicy: Always
           ports:
             - containerPort: 80
@@ -105,12 +85,12 @@ spec:
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: vaip-ai-ingress
+  name: cloudclip-ingress
 spec:
   entryPoints:
     - web
   routes:
-    - match: Host(`vaipai.xaasfarm.com`)
+    - match: Host(`api.cloudclip.de`)
       kind: Rule
       services:
         - name: gateway
