@@ -1,0 +1,117 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: auth
+spec:
+  selector:
+    matchLabels:
+      app: auth
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: auth
+    spec:
+      containers:
+        - name: auth
+          image: dregistry.xaasfarm.com/xaasfarm/xaasfarm/graphql-auth:Development
+          imagePullPolicy: Always
+
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: video
+spec:
+  selector:
+    matchLabels:
+      app: video
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: video
+    spec:
+      containers:
+        - name: video
+          image: dregistry.xaasfarm.com/xaasfarm/xaasfarm/graphql-video:Development
+          imagePullPolicy: Always
+
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: products
+spec:
+  selector:
+    matchLabels:
+      app: products
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: products
+    spec:
+      containers:
+        - env:
+            - name: DATABASE_URL
+              value: mongodb://sound:w5rwdt8xd6uindqrw8@88.99.192.6:27017/aiDB?connectTimeoutMS=10000&authSource=admin&authMechanism=SCRAM-SHA-1
+          name: products
+          image: dregistry.xaasfarm.com/xaasfarm/xaasfarm/graphql-products:Development
+          imagePullPolicy: Always
+
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: ai
+spec:
+  selector:
+    matchLabels:
+      app: ai
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ai
+    spec:
+      containers:
+        - name: ai
+          image: dregistry.xaasfarm.com/xaasfarm/xaasfarm/graphql-ai:Development
+          imagePullPolicy: Always
+
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: gateway
+spec:
+  selector:
+    matchLabels:
+      app: gateway
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: gateway
+    spec:
+      containers:
+        - name: gateway
+          image: dregistry.xaasfarm.com/xaasfarm/xaasfarm/graphql:Development
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: vaip-ai-ingress
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`vaipai.xaasfarm.com`)
+      kind: Rule
+      services:
+        - name: gateway
+          port: 80

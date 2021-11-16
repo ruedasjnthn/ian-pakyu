@@ -1,0 +1,57 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: auth
+spec:
+  selector:
+    app: auth
+  ports:
+    - port: 4000
+  type: ClusterIP
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: video
+spec:
+  selector:
+    app: video
+  ports:
+    - port: 4001
+  type: ClusterIP
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: ai
+spec:
+  selector:
+    app: ai
+  ports:
+    - port: 4002
+  type: ClusterIP
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: products
+spec:
+  selector:
+    app: products
+  ports:
+    - port: 4003
+  type: ClusterIP
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: gateway
+spec:
+  selector:
+    app: gateway
+  ports:
+    - port: 80
