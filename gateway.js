@@ -19,10 +19,9 @@ app.use(
 sleep(2000);
 const gateway = new ApolloGateway({
   serviceList: [
-    { name: 'auth', url: 'http://auth:4000/' },
-    { name: 'video', url: 'http://video:4001/' },
-    { name: 'ai', url: 'http://ai:4002/' },
-    { name: 'products', url: 'http://products:4003/' },
+    { name: 'auth', url: 'http://localhost:4000/' },
+    { name: 'import', url: 'http://localhost:4001/' },
+    { name: 'issue', url: 'http://localhost:4002/' },
   ],
   buildService({ name, url }) {
     return new RemoteGraphQLDataSource({
