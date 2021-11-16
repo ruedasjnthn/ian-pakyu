@@ -1,0 +1,9 @@
+[submodule "services/issue"]
+	path = services/issue
+	url = git@bitbucket.org:SLadewig93/cc_backend-issue.git
+[submodule "services/import"]
+	path = services/import
+	url = git@bitbucket.org:SLadewig93/cc_backend-import.git
+[submodule "services/auth"]
+	path = services/auth
+	url = git@bitbucket.org:SLadewig93/cc_backend-auth.git
