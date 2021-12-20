@@ -2,12 +2,14 @@
 require("dotenv").config();
 const { ApolloServer } = require('apollo-server-express');
 const { ApolloGateway, RemoteGraphQLDataSource } = require('@apollo/gateway');
+const cors = require('cors');
 const express = require('express');
 const expressJwt = require("express-jwt");
 
 const app = express();
 const port = 8080;
 
+app.use( cors() );
 app.use(
   expressJwt({
     secret: process.env.JwtToken,
