@@ -21,7 +21,7 @@ pipelines:
           # build the Docker image (this will use the Dockerfile in the root of the repo)
           - docker build -t $BITBUCKET_BUILD_NUMBER .
   branches:
-   '{Development,Productive}':
+   '{Development,Production}':
     - step:
         services:
           - docker
