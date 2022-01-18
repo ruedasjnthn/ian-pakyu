@@ -11,7 +11,7 @@ const port = 8080;
 
 
 app.use(express.json({ limit: '50mb' }));
-app.use( cors() );
+app.use(cors());
 app.use(
   expressJwt({
     secret: process.env.JwtToken,
@@ -23,9 +23,9 @@ app.use(
 sleep(2000);
 const gateway = new ApolloGateway({
   serviceList: [
-    { name: 'auth', url: 'http://localhost:4000/' },
-    { name: 'import', url: 'http://localhost:4001/' },
-    { name: 'issue', url: 'http://localhost:4002/' },
+    { name: 'auth', url: process.env.AuthService },
+    { name: 'import', url: process.env.ImportService },
+    { name: 'issue', url: process.env.IssueService },
   ],
   buildService({ name, url }) {
     return new RemoteGraphQLDataSource({
