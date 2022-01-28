@@ -10,3 +10,6 @@
 [submodule "services/print"]
 	path = services/print
 	url = git@bitbucket.org:SLadewig93/cc_backend-print.git
+[submodule "services/batch"]
+	path = services/batch
+	url = git@bitbucket.org:SLadewig93/cc_backend-batch.git
