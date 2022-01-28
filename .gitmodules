@@ -7,3 +7,6 @@
 [submodule "services/auth"]
 	path = services/auth
 	url = git@bitbucket.org:SLadewig93/cc_backend-auth.git
+[submodule "services/print"]
+	path = services/print
+	url = git@bitbucket.org:SLadewig93/cc_backend-print.git
