@@ -26,6 +26,8 @@ const gateway = new ApolloGateway({
     { name: 'auth', url: process.env.AuthService },
     { name: 'import', url: process.env.ImportService },
     { name: 'issue', url: process.env.IssueService },
+    { name: 'print', url: process.env.PrintService },
+    // { name: 'batch', url: process.env.BatchService }
   ],
   buildService({ name, url }) {
     return new RemoteGraphQLDataSource({

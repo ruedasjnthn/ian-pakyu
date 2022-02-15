@@ -6,6 +6,7 @@
     "start-service-auth": "nodemon services/auth/index.js",
     "start-service-import": "nodemon services/import/index.js",
     "start-service-issue": "nodemon services/issue/index.js",
+    "start-service-print": "nodemon services/print/index.js",
     "start-services": "concurrently \"npm:start-service-*\"",
     "postinstall": "lerna bootstrap"
   },
