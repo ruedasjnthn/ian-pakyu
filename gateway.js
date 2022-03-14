@@ -5,11 +5,13 @@ const { ApolloGateway, RemoteGraphQLDataSource } = require('@apollo/gateway');
 const cors = require('cors');
 const express = require('express');
 const expressJwt = require("express-jwt");
+const cookieParser = require('cookie-parser')
+const authHelper = require("./outlookHelper");
 
 const app = express();
 const port = process.env.GwPort;
 
-
+app.use(cookieParser())
 app.use(express.json({ limit: '50mb' }));
 app.use(cors());
 app.use(
@@ -20,6 +22,8 @@ app.use(
   })
 );
 
+app.get('/authorize', authHelper.getTokenFromCode);
+
 sleep(2000);
 const gateway = new ApolloGateway({
   serviceList: [
@@ -27,7 +31,7 @@ const gateway = new ApolloGateway({
     { name: 'import', url: process.env.ImportService },
     { name: 'issue', url: process.env.IssueService },
     { name: 'print', url: process.env.PrintService },
-    // { name: 'batch', url: process.env.BatchService }
+    { name: 'batch', url: process.env.BatchService }
   ],
   buildService({ name, url }) {
     return new RemoteGraphQLDataSource({
@@ -42,12 +46,10 @@ const gateway = new ApolloGateway({
   }
 });
 
-
-
 (async () => {
   const apolloServer = new ApolloServer({
     gateway,
-    subscriptions: false,
+    subscription: false,
     context: ({ req }) => {
       const user = req.user || null;
       return { user };
