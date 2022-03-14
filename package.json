@@ -7,21 +7,25 @@
     "start-service-import": "nodemon services/import/index.js",
     "start-service-issue": "nodemon services/issue/index.js",
     "start-service-print": "nodemon services/print/index.js",
+    "start-service-batch": "nodemon services/batch/index.js",
     "start-services": "concurrently \"npm:start-service-*\"",
     "postinstall": "lerna bootstrap"
   },
   "devDependencies": {
+    "concurrently": "latest",
     "lerna": "latest",
-    "nodemon": "latest",
-    "concurrently": "latest"
+    "nodemon": "latest"
   },
   "dependencies": {
     "@apollo/gateway": "latest",
+    "@azure/msal-node": "^1.7.0",
     "apollo-server": "latest",
     "apollo-server-express": "^3.3.0",
+    "cookie-parser": "^1.4.6",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-jwt": "^6.1.0",
-    "graphql": "15.7.2"
+    "graphql": "15.7.2",
+    "isomorphic-fetch": "^3.0.0"
   }
 }
