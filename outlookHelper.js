@@ -44,7 +44,7 @@ const getTokenFromCode = (req, res) => {
 
   const accessToken = cca.acquireTokenByCode(tokenRequest).then((response) => {
     console.log("\nResponse: \n:", response);
-    saveValuesToCookie(response, res, code)
+    saveValuesToCookie(response, res)
     res.send(redirectPage);
   }).catch((error) => {
     console.log(error);
@@ -54,10 +54,10 @@ const getTokenFromCode = (req, res) => {
   return accessToken
 };
 
-const saveValuesToCookie = (response, res, code) => {
-  res.cookie('code', code, { maxAge: 3600000 })
-  res.cookie('access_token', response.accessToken, { maxAge: 3600000 });
-  res.cookie('email', response.account.username, { maxAge: 360000 });
+const saveValuesToCookie = (response, res) => {
+  res.cookie('access_token', response.accessToken, { maxAge: 60 * 60 * 24 * 7 });
+  res.cookie('access_token', response.accessToken, { maxAge: 60 * 60 * 24 * 7, domain: 'app-dev.aktenplatz.de' });
+  res.cookie('access_token', response.accessToken, { maxAge: 60 * 60 * 24 * 7, domain: 'app.aktenplatz.de' });
 }
 
 const redirectPage = `
