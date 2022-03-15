@@ -55,9 +55,12 @@ const getTokenFromCode = (req, res) => {
 };
 
 const saveValuesToCookie = (response, res) => {
-  res.cookie('access_token', response.accessToken, { maxAge: 60 * 60 * 24 * 7 });
-  res.cookie('access_token', response.accessToken, { maxAge: 60 * 60 * 24 * 7, domain: 'app-dev.aktenplatz.de' });
-  res.cookie('access_token', response.accessToken, { maxAge: 60 * 60 * 24 * 7, domain: 'app.aktenplatz.de' });
+  if (process.env.LOCAL_DEV === 'true')
+    res.cookie('access_token', response.accessToken, { maxAge: 60 * 60 * 24 * 7 });
+  if (process.env.DEV === 'true')
+    res.cookie('access_token', response.accessToken, { maxAge: 60 * 60 * 24 * 7, domain: 'app-dev.aktenplatz.de' });
+  else
+    res.cookie('access_token', response.accessToken, { maxAge: 60 * 60 * 24 * 7, domain: 'app.aktenplatz.de' });
 }
 
 const redirectPage = `
