@@ -61,7 +61,11 @@ const saveValuesToCookie = (response, res, code) => {
 }
 
 const redirectPage = `
-<html><head></head><body><div>    
+<html>
+  <script>
+  window.close();
+  </script>
+  <head></head><body><div>    
     <div style="display:flex; flex-direction:column; width: 120px;">
         Success!
         <button onclick="window.close()" style="height:20px">
