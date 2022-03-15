@@ -6,7 +6,6 @@ const cors = require('cors');
 const express = require('express');
 const expressJwt = require("express-jwt");
 const cookieParser = require('cookie-parser')
-const authHelper = require("./outlookHelper");
 
 const app = express();
 const port = process.env.GwPort;
@@ -21,8 +20,6 @@ app.use(
     credentialsRequired: false
   })
 );
-
-app.get('/authorize', authHelper.getTokenFromCode);
 
 sleep(2000);
 const gateway = new ApolloGateway({
