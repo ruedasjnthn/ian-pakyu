@@ -45,8 +45,7 @@ const getTokenFromCode = (req, res) => {
   const accessToken = cca.acquireTokenByCode(tokenRequest).then((response) => {
     console.log("\nResponse: \n:", response);
     saveValuesToCookie(response, res, code)
-    res.sendStatus(200);
-    // todo: add a html with button to redirect back to the app
+    res.send(redirectPage);
   }).catch((error) => {
     console.log(error);
     return null
@@ -61,6 +60,17 @@ const saveValuesToCookie = (response, res, code) => {
   res.cookie('email', response.account.username, { maxAge: 360000 });
 }
 
+const redirectPage = `
+<html><head></head><body><div>    
+    <div style="display:flex; flex-direction:column; width: 120px;">
+        Success!
+        <button onclick="window.close()" style="height:20px">
+            Close
+        </button>
+    </div>
+</div></body></html>`;
+
 module.exports = {
   getTokenFromCode,
+  redirectPage
 };
