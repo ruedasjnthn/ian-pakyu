@@ -57,8 +57,8 @@ const getTokenFromCode = (req, res) => {
 
 const saveValuesToCookie = (response, res, code) => {
   res.cookie('code', code, { maxAge: 3600000 })
-  res.cookie('access_token', response.accessToken, { maxAge: 3600000, httpOnly: true });
-  res.cookie('email', response.account.username, { maxAge: 360000, httpOnly: true });
+  res.cookie('access_token', response.accessToken, { maxAge: 3600000 });
+  res.cookie('email', response.account.username, { maxAge: 360000 });
 }
 
 module.exports = {
