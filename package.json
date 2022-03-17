@@ -18,7 +18,6 @@
   },
   "dependencies": {
     "@apollo/gateway": "latest",
-    "@azure/msal-node": "^1.7.0",
     "apollo-server": "latest",
     "apollo-server-express": "^3.3.0",
     "cookie-parser": "^1.4.6",
@@ -26,6 +25,5 @@
     "express": "^4.17.1",
     "express-jwt": "^6.1.0",
     "graphql": "15.7.2",
-    "isomorphic-fetch": "^3.0.0"
   }
 }
