@@ -5,12 +5,10 @@ const { ApolloGateway, RemoteGraphQLDataSource } = require('@apollo/gateway');
 const cors = require('cors');
 const express = require('express');
 const expressJwt = require("express-jwt");
-const cookieParser = require('cookie-parser')
 
 const app = express();
 const port = process.env.GwPort;
 
-app.use(cookieParser())
 app.use(express.json({ limit: '50mb' }));
 app.use(cors());
 app.use(
