@@ -13,3 +13,6 @@
 [submodule "services/batch"]
 	path = services/batch
 	url = git@bitbucket.org:SLadewig93/cc_backend-batch.git
+[submodule "services/cron"]
+	path = services/cron
+	url = git@bitbucket.org:SLadewig93/cc_backend-cron.git
