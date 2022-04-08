@@ -16,8 +16,8 @@ const haltOnTimedout = (req, res, next) => {
 }
 
 app.use(express.json({ limit: '50mb' }));
-// app.use(timeout(300000));
-// app.use(haltOnTimedout);
+app.use(timeout(300000));
+app.use(haltOnTimedout);
 app.use(cors());
 app.use(
   expressJwt({
