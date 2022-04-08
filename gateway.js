@@ -10,6 +10,7 @@ const app = express();
 const port = process.env.GwPort;
 
 app.use(express.json({ limit: '50mb' }));
+app.use(timeout('300s'))
 app.use(cors());
 app.use(
   expressJwt({
