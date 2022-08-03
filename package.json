@@ -8,6 +8,7 @@
     "start-service-issue": "nodemon services/issue/index.js",
     "start-service-print": "nodemon services/print/index.js",
     "start-service-batch": "nodemon services/batch/index.js",
+    "start-service-help": "nodemon services/help/index.js",
     "start-services": "concurrently \"npm:start-service-*\"",
     "postinstall": "lerna bootstrap"
   },
