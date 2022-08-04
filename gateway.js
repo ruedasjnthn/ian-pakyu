@@ -32,6 +32,7 @@ const gateway = new ApolloGateway({
   serviceList: [
     { name: 'auth', url: process.env.AuthService },
     { name: 'import', url: process.env.ImportService },
+    { name: 'help', url: process.env.HelpService },
     { name: 'issue', url: process.env.IssueService },
     { name: 'print', url: process.env.PrintService },
     { name: 'batch', url: process.env.BatchService }
