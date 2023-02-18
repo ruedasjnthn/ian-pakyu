@@ -16,3 +16,6 @@
 [submodule "services/cron"]
 	path = services/cron
 	url = git@bitbucket.org:SLadewig93/cc_backend-cron.git
+[submodule "services/help"]
+	path = services/help
+	url = https://bitbucket.org/SLadewig93/cc_backend-help
