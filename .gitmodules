@@ -19,3 +19,6 @@
 [submodule "services/help"]
 	path = services/help
 	url = https://bitbucket.org/SLadewig93/cc_backend-help
+[submodule "services/ai"]
+	path = services/ai
+	url = https://bitbucket.org/SLadewig93/cc_backend-ai
