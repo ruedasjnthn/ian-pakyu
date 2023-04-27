@@ -58,7 +58,8 @@ const gateway = new ApolloGateway({
     context: ({ req }) => {
       const user = req.user || null;
       return { user };
-    }
+    },
+    plugins: [ApolloServerPluginLandingPageDisabled()]
   });
 
   await apolloServer.start();
