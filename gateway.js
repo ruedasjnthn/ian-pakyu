@@ -55,11 +55,12 @@ const gateway = new ApolloGateway({
   const apolloServer = new ApolloServer({
     gateway,
     subscription: false,
+    playground: false,
     context: ({ req }) => {
       const user = req.user || null;
       return { user };
     },
-    plugins: [ApolloServerPluginLandingPageDisabled()]
+
   });
 
   await apolloServer.start();
