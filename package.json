@@ -1,5 +1,5 @@
 {
-  "name": "federation-demo",
+  "name": "aktenplatz_gateway",
   "main": "gateway.js",
   "scripts": {
     "start-gateway": "nodemon gateway.js",
@@ -20,12 +20,11 @@
   },
   "dependencies": {
     "@apollo/gateway": "latest",
-    "apollo-server": "latest",
-    "apollo-server-express": "^3.3.0",
+    "@apollo/server": "latest",
     "connect-timeout": "^1.9.0",
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "express-jwt": "^6.1.0",
-    "graphql": "15.7.2"
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-jwt": "^8.4.1",
+    "graphql": "latest"
   }
 }
