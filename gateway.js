@@ -57,7 +57,6 @@ const gateway = new ApolloGateway({
 
   const server = new ApolloServer({
     gateway,
-    debug: true,
     // Subscriptions are unsupported but planned for a future Gateway version.
     subscriptions: false,
     plugins
