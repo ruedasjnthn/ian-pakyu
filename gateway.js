@@ -9,6 +9,7 @@ const express = require('express');
 const { EventEmitter } = require('events');
 const { expressjwt: jwt } = require("express-jwt");
 const timeout = require('connect-timeout');
+const bodyParser = require('body-parser');
 
 const biggerEventEmitter = new EventEmitter();
 biggerEventEmitter.setMaxListeners(30);
@@ -24,14 +25,6 @@ const haltOnTimedout = (req, res, next) => {
 app.use(express.json({ limit: '50mb' }));
 app.use(timeout(300000));
 app.use(haltOnTimedout);
-app.use(cors());
-app.use(
-  jwt({
-    secret: process.env.JwtToken,
-    algorithms: ["HS256"],
-    credentialsRequired: false
-  })
-);
 
 sleep(2000);
 const gateway = new ApolloGateway({
@@ -60,19 +53,32 @@ const gateway = new ApolloGateway({
 });
 
 (async () => {
-  const apolloServer = new ApolloServer({
-    gateway,
-    subscription: false,
-    plugins: [ApolloServerPluginLandingPageDisabled()],
-    context: ({ req }) => {
-      const user = req.user || null;
-      return { user };
-    },
+  const plugins = [ApolloServerPluginLandingPageDisabled()];
 
+  const server = new ApolloServer({
+    gateway,
+    debug: true,
+    // Subscriptions are unsupported but planned for a future Gateway version.
+    subscriptions: false,
+    plugins
   });
 
-  await apolloServer.start();
-  app.use(expressMiddleware(apolloServer));
+  await server.start();
+
+  app.use(
+    jwt({
+      secret: process.env.JwtToken,
+      algorithms: ["HS256"],
+      credentialsRequired: false,
+    }),
+    cors(),
+    bodyParser.json(),
+    expressMiddleware(server, {
+      context: async ({ req, reqs }) => ({
+        user: req.auth
+      }),
+    }),
+  );
 
   app.listen({ port }, () =>
     console.log(`Server ready at http://localhost:${port}/graphql`)
