@@ -10,10 +10,10 @@ const { EventEmitter } = require('events');
 const { expressjwt: jwt } = require("express-jwt");
 const timeout = require('connect-timeout');
 const bodyParser = require('body-parser');
-
+const { Ipware }  = require('@fullerstack/nax-ipware');
 const biggerEventEmitter = new EventEmitter();
 biggerEventEmitter.setMaxListeners(30);
-
+const ipware = new Ipware();
 const app = express();
 const port = process.env.GwPort;
 const haltOnTimedout = (req, res, next) => {
@@ -21,7 +21,6 @@ const haltOnTimedout = (req, res, next) => {
     next();
   }
 }
-
 app.use(express.json({ limit: '50mb' }));
 app.use(timeout(300000));
 app.use(haltOnTimedout);
@@ -46,6 +45,16 @@ const gateway = new ApolloGateway({
         request.http.headers.set(
           "user",
           context.user ? JSON.stringify(context.user) : null
+        );
+        var ip = "";
+        if (context.ipInfo && context.ipInfo.ip){
+          ip= context.ipInfo.ip
+        }
+        request.http.headers.set(
+          "userIpPassedByGateway",ip
+        );
+        request.http.headers.set(
+          "userAgent", context.userAgent
         );
       }
     });
@@ -73,9 +82,14 @@ const gateway = new ApolloGateway({
     cors(),
     bodyParser.json(),
     expressMiddleware(server, {
-      context: async ({ req, reqs }) => ({
-        user: req.auth
-      }),
+      context: async ({ req, reqs }) => {
+        const ipInfo = ipware.getClientIP(req)
+        return {
+          user: req.auth,
+          ipInfo,
+          userAgent: req.headers["user-agent"]
+        }
+      },
     }),
   );
 
