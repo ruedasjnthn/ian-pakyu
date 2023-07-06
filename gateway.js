@@ -53,6 +53,9 @@ const gateway = new ApolloGateway({
         request.http.headers.set(
           "userIpPassedByGateway",ip
         );
+        request.http.headers.set(
+          "userAgent", context.userAgent
+        );
       }
     });
   }
@@ -83,7 +86,8 @@ const gateway = new ApolloGateway({
         const ipInfo = ipware.getClientIP(req)
         return {
           user: req.auth,
-          ipInfo
+          ipInfo,
+          userAgent: req.headers["user-agent"]
         }
       },
     }),
