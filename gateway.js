@@ -83,7 +83,7 @@ const gateway = new ApolloGateway({
     bodyParser.json(),
     expressMiddleware(server, {
       context: async ({ req }) => {
-        const ipInfo = ipware.getClientIP(request, {
+        const ipInfo = ipware.getClientIP(req, {
           requestHeadersOrder: [
             "X-REAL-IP",'X_FORWARDED_FOR'],
 
