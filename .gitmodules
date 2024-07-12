@@ -1,24 +1,24 @@
-[submodule "services/issue"]
-	path = services/issue
-	url = git@bitbucket.org:SLadewig93/cc_backend-issue.git
-[submodule "services/import"]
-	path = services/import
-	url = git@bitbucket.org:SLadewig93/cc_backend-import.git
-[submodule "services/auth"]
-	path = services/auth
-	url = git@bitbucket.org:SLadewig93/cc_backend-auth.git
-[submodule "services/print"]
-	path = services/print
-	url = git@bitbucket.org:SLadewig93/cc_backend-print.git
-[submodule "services/batch"]
-	path = services/batch
-	url = git@bitbucket.org:SLadewig93/cc_backend-batch.git
-[submodule "services/cron"]
-	path = services/cron
-	url = git@bitbucket.org:SLadewig93/cc_backend-cron.git
-[submodule "services/help"]
-	path = services/help
-	url = git@bitbucket.org:SLadewig93/cc_backend-help.git
-[submodule "services/ai"]
-	path = services/ai
-	url = git@bitbucket.org:SLadewig93/cc_backend-ai.git
+# [submodule "services/issue"]
+# 	path = services/issue
+# 	url = git@bitbucket.org:SLadewig93/cc_backend-issue.git
+# [submodule "services/import"]
+# 	path = services/import
+# 	url = git@bitbucket.org:SLadewig93/cc_backend-import.git
+# [submodule "services/auth"]
+# 	path = services/auth
+# 	url = git@bitbucket.org:SLadewig93/cc_backend-auth.git
+# [submodule "services/print"]
+# 	path = services/print
+# 	url = git@bitbucket.org:SLadewig93/cc_backend-print.git
+# [submodule "services/batch"]
+# 	path = services/batch
+# 	url = git@bitbucket.org:SLadewig93/cc_backend-batch.git
+# [submodule "services/cron"]
+# 	path = services/cron
+# 	url = git@bitbucket.org:SLadewig93/cc_backend-cron.git
+# [submodule "services/help"]
+# 	path = services/help
+# 	url = git@bitbucket.org:SLadewig93/cc_backend-help.git
+# [submodule "services/ai"]
+# 	path = services/ai
+# 	url = git@bitbucket.org:SLadewig93/cc_backend-ai.git
