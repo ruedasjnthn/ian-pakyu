@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Login Mail</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="only">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style type="text/css">
+        body {
+            background-color: #fffaf2;
+        }
+
+        a {
+            color: #fa5d1e !important;
+            text-decoration: none !important;
+        }
+
+    </style>
+    <style type="text/css">
+        .body,
+        .darkmode,
+        .darkmode div {
+            /* With class body on the body tag, and all elements represented here that have a background color */
+            background-image: linear-gradient(#ffffff, #ffffff) !important;
+        }
+
+        .darkmode p {
+            /* Add other selectors for other text elements */
+            -webkit-text-fill-color: #000000 !important;
+        }
+
+        @media only screen and (max-width:599px) {
+            .mob {
+                width: 100% !important;
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <table width="100%" height="100%">
+        <tr>
+            <td width="100%" height="100%" bgcolor="#fffaf2">
+                <!--[if mso]>
+                 <center>
+                     <table bgcolor="#ffffff" style=""background:#ffffff;><tr><td width="600" bgcolor="#ffffff" style=""background:#ffffff;>
+                        <![endif]-->
+
+
+
+                <div style="background: #ffffff;border-top: 4px solid #fa5d1e; width: 100%; max-width: 600px;margin: 0 auto;">
+
+                    <table width="100%" style="table-layout:fixed;border-spacing: 0;" cellpadding="40">
+                        <tr>
+                            <td colspan="2" align="center">
+                                <a href="https://aktenplatz.de"><img src="https://images.aktenplatz.de/pwMail/logo.png" style="width: 100%;max-width: 280px;" alt=""></a>
+                            </td>
+                        </tr>
+                    </table>
+
+
+
+
+                    <table width="100%" style="table-layout:fixed;border-spacing: 0;" cellpadding="40">
+                        <tr>
+                            <td colspan="2" align="center">
+                                <img src="https://images.aktenplatz.de/pwMail/banner.png" style="width: 100%;max-width: 480px;" alt="">
+                            </td>
+                        </tr>
+                    </table>
+
+
+                    <table width="100%" style="table-layout:fixed;border-spacing: 0;" cellpadding="40">
+                        <tr>
+                            <td colspan="2" align="center">
+
+                                <p style="font-family: 'Poppins', Helvetica, Arial, sans-serif;font-size: 36px;font-weight: 500; color: #000000; margin: 0px;">
+                                    Willkommen an Board
+                                </p>
+
+                                <br>
+                                <div style="background: #000;height: 2px;width: 100px;display: block;"></div>
+                                <br>
+
+                                <p style="font-family: 'Helvetica', Arial, sans-serif;font-size: 18px;font-weight: bold; color: #000000; margin: 0px;">
+                                    Hier ist dein Login-Code
+                                </p>
+                                
+                                <br>    
+
+                                <div style="background: #fdcebb;border-radius: 12px;padding: 1px;width: 270px; display: block;">
+                                    <p style="font-family: 'Poppins', Helvetica, Arial, sans-serif;font-size: 44px;font-weight: bold; color: #000000; margin: 0px;letter-spacing: 10px;">
+                                        #token#
+                                    </p>
+                                </div>
+
+                                <br>
+
+                                <p style="font-family: 'Helvetica', Arial, sans-serif;font-size: 20px;font-weight: normal; color: #000000; line-height: 1.5; margin: 10px;">
+                                    Hi #mail#, mit dieser Mail kannst du dich auf <a href="https://app.aktenplatz.de">https://app.aktenplatz.de</a> anmelden. Klicke auf den Button oder gebe den Code ein um dich anzumelden.
+                                </p>
+                                
+                                <br>
+
+
+                                <div>
+                                    <!--[if mso]>
+                                      <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="#url#" style="height:60px;v-text-anchor:middle;width:200px;" arcsize="7%" stroke="f" fillcolor="#fa5d1e">
+                                        <w:anchorlock/>
+                                        <center>
+                                      <![endif]-->
+                                    <a href="#url#" style="background-color:#fa5d1e;border-radius:4px;color:#ffffff !important;display:inline-block;font-family: 'Helvetica', Arial, sans-serif;font-size:18px;font-weight:bold;line-height:60px;text-align:center;text-decoration:none;width:200px;-webkit-text-size-adjust:none;">Jetzt anmelden</a>
+                                    <!--[if mso]>
+                                        </center>
+                                      </v:roundrect>
+                                    <![endif]-->
+                                </div>
+
+
+                            </td>
+                        </tr>
+                    </table>
+
+
+
+                    <table width="100%" style="table-layout:fixed;border-spacing: 0;" cellpadding="30">
+
+                        <tr bgcolor="#253138">
+                            <td colspan="2" align="center">
+
+                               <a href="https://aktenplatz.de"><img src="https://images.aktenplatz.de/pwMail/logoDown.png" alt=""></a>
+
+                                <br><br>
+                                
+                                <table style="table-layout:fixed;border-spacing: 0;text-align: center;margin: 0 auto;" cellpadding="10">
+                                    <tr>
+                                        <td><a href="https://aktenplatz.de/#"><img src="https://images.aktenplatz.de/pwMail/facebook.png" alt=""></a></td>
+                                        <td><a href="https://aktenplatz.de/#"><img src="https://images.aktenplatz.de/pwMail/twitter.png" alt=""></a></td>
+                                        <td><a href="https://aktenplatz.de/#"><img src="https://images.aktenplatz.de/pwMail/linkedin.png" alt=""></a></td>
+                                    </tr>
+                                </table>
+
+                                <p style="font-family: 'Arial', Helvetica, Arial, sans-serif;;font-size: 10px; color: #fff;padding: 0px 0px;">
+                                    Aktenplatz.de All rights reserved.
+                                </p>
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+
+
+
+
+
+
+
+                <!--[if mso]>
+                    </td></tr></table>
+                </center>
+                <![endif]-->
+            </td>
+        </tr>
+    </table>
+
+
+</body>
+
+</html>

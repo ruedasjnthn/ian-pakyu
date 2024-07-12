@@ -1,0 +1,37 @@
+{
+  "name": "cron",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cron-start.js",
+  "scripts": {
+    "start": "node cron-start.js",
+    "generate-token": "node generate-token.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/client": "^3.6.2",
+    "apollo-server-express": "^3.6.7",
+    "archiver": "^5.3.0",
+    "axios": "^0.27.2",
+    "basic-ftp": "^4.6.6",
+    "chokidar": "^3.5.3",
+    "dayjs": "^1.11.6",
+    "dotenv": "^10.0.0",
+    "express": "^4.18.1",
+    "form-data": "^4.0.0",
+    "ftp": "^0.3.10",
+    "graphql": "^16.4.0",
+    "graylog2": "^0.2.1",
+    "jsonwebtoken": "^8.5.1",
+    "minio": "^7.0.19",
+    "moment": "^2.29.4",
+    "mongoose": "^6.2.10",
+    "node-cron": "^3.0.0",
+    "node-fetch": "^2.6.7",
+    "react": "^18.1.0",
+    "xml2js": "^0.4.23"
+  }
+}

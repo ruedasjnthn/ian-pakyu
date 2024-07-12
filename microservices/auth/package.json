@@ -1,0 +1,28 @@
+{
+  "name": "auth",
+  "scripts": {
+    "start": "node index.js",
+    "nodemon_start": "nodemon index.js"
+  },
+  "dependencies": {
+    "@apollo/federation": "latest",
+    "@mailchimp/mailchimp_marketing": "^3.0.74",
+    "apollo-cache-inmemory": "^1.6.6",
+    "apollo-client": "^2.6.10",
+    "apollo-link-http": "^1.5.17",
+    "apollo-server": "latest",
+    "apollo-server-express": "^3.3.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "graphql": "15.8.0",
+    "graphql-middleware": "^6.1.7",
+    "graphql-shield": "^7.5.0",
+    "graylog2": "^0.2.1",
+    "jsonwebtoken": "^8.5.1",
+    "merge-graphql-schemas": "^1.7.8",
+    "moment": "^2.29.3",
+    "mongoose": "^6.0.9",
+    "node-fetch": "^2.6.7",
+    "nodemailer": "^6.6.5"
+  }
+}
